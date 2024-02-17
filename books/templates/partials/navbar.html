@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="{% url 'index' %}" style="font-weight: 600;">Проект</a>
+
+    <div id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            {% if user.is_authenticated %}
+            <li class="nav-item">
+                <a class="nav-link" href="#">Movies</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'logout' %}">Выйти</a>
+            </li>
+            {% else %}
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'login' %}"><div class="btn btn-success" style="background-color:cornflowerblue; border-color:cornflowerblue;">Войти</div></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'register' %}"><div class="btn btn-success" style="background-color:cornflowerblue; border-color:cornflowerblue;">Зарегистрироваться</div></a>
+            </li>
+            {% endif %}
+
+        </ul>
+    </div>
+</nav>
